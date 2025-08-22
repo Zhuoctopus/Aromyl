@@ -1,0 +1,27 @@
+.text-gradient {
+    background: linear-gradient(to right, #00BFFF, #3A7DFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.feature-card {
+    @apply bg-gray-800/50 border border-gray-700 p-6 rounded-lg transition-all duration-300;
+}
+
+.feature-card.hover-blue:hover {
+    @apply border-electric-blue-500/50 shadow-lg shadow-electric-blue-500/10;
+}
+
+.feature-card.hover-green:hover {
+    @apply border-profit-green-500/50 shadow-lg shadow-profit-green-500/10;
+}
+
+.feature-icon {
+    @apply text-electric-blue-400;
+}
+
+.btn-primary {
+    @apply inline-flex items-center px-6 py-3 bg-electric-blue-500 text-white font-semibold rounded-lg hover:bg-electric-blue-600 transition-colors duration-300 transform hover:scale-105;
+}

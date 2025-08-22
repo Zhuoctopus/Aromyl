@@ -1,13 +1,48 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aromyl</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel=" preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'electric-blue': { 200: '#A7C7FF', 400: '#5A8DFF', 500: '#3A7DFF', 600: '#2A6DFF' },
+            'cyber-cyan': { 400: '#00D1FF', 500: '#00BFFF', 600: '#00AFFF' },
+            'neural-purple': { 400: '#C7A7FF', 500: '#A777FF', 600: '#8747FF' },
+            'profit-green': { 400: '#22E8A5', 500: '#00D985', 600: '#00C975' },
+          },
+          keyframes: {
+            'spin-slow': {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            },
+            'reverse-spin': {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(-360deg)' },
+            }
+          },
+          animation: {
+            'spin-slow': 'spin-slow 15s linear infinite',
+            'reverse-spin': 'reverse-spin 10s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  <app-root></app-root>
+  <app-root></app-root> <!-- THIS is the important line! -->
 </body>
+
 </html>

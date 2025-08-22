@@ -1,24 +1,16 @@
 :root {
-    --glow-color: #7c3aed;
-    /* Violet-600 */
-    --accent-color: #2dd4bf;
-    /* Teal-400 */
-}
-
-html {
-    scroll-behavior: smooth;
+    --glow-color: #7c3aed; /* Violet-600 */
+    --accent-color: #2dd4bf; /* Teal-400 */
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0a0a0a;
-    color: #e5e5e5;
-    /* Neutral-200 */
+    color: #e5e5e5; /* Neutral-200 */
 }
 
 .glow-effect {
-    position: fixed;
-    /* Keep glow fixed during scroll */
+    position: fixed; /* Keep glow fixed during scroll */
     pointer-events: none;
     z-index: -1;
     top: 50%;
@@ -37,7 +29,6 @@ body {
         transform: translate(-50%, -50%) scale(0.8);
         opacity: 0.4;
     }
-
     100% {
         transform: translate(-50%, -50%) scale(1.2);
         opacity: 0.6;
@@ -70,8 +61,7 @@ body {
 }
 
 .btn {
-    padding: 1rem 2rem;
-    /* Increased padding for bigger buttons */
+    padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -82,12 +72,13 @@ body {
 }
 
 .btn-primary {
-    background-image: linear-gradient(to right, #2dd4bf, #3b82f6);
-    color: #fff;
+    background-color: var(--accent-color);
+    color: #0a0a0a;
     box-shadow: 0 0 15px rgba(45, 212, 191, 0.3);
 }
 
 .btn-primary:hover {
+    background-color: #5eead4; /* Teal-300 */
     transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(45, 212, 191, 0.5);
 }
@@ -105,53 +96,12 @@ body {
 
 .feature-list li::before {
     content: '•';
+    color: var(--accent-color);
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
-    opacity: 0.4;
-    transition: opacity 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
 }
-
-@keyframes smooth-crossfade-bullet {
-    0% {
-        opacity: 0.4;
-        text-shadow: none;
-    }
-
-    25% {
-        opacity: 1;
-        text-shadow: 0 0 12px currentColor;
-    }
-
-    50%,
-    100% {
-        opacity: 0.4;
-        text-shadow: none;
-    }
-}
-
-.flashing-item-1::before {
-    color: #2dd4bf;
-    /* Teal */
-    animation: smooth-crossfade-bullet 3s infinite;
-    animation-delay: 0s;
-}
-
-.flashing-item-2::before {
-    color: #3b82f6;
-    /* Blue */
-    animation: smooth-crossfade-bullet 3s infinite;
-    animation-delay: 1s;
-}
-
-.flashing-item-3::before {
-    color: #a855f7;
-    /* Purple */
-    animation: smooth-crossfade-bullet 3s infinite;
-    animation-delay: 2s;
-}
-
 
 .feature-card {
     background-color: rgba(17, 17, 17, 0.5);
@@ -164,21 +114,9 @@ body {
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
     border-color: var(--glow-color);
-    /* Default hover color (purple) */
+    transform: translateY(-4px);
     box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
-    /* Default glow */
-}
-
-.feature-card.hover-blue:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-.feature-card.hover-green:hover {
-    border-color: #2dd4bf;
-    box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
 }
 
 .ai-feature-card {
@@ -201,8 +139,8 @@ body {
     border-radius: inherit;
     padding: 1px;
     background: linear-gradient(120deg, var(--glow-color), transparent, transparent);
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -216,7 +154,7 @@ body {
 
 .ai-feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 
@@ -228,52 +166,18 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    /* Prevent icon from shrinking */
-}
-
-.feature-icon-blue {
-    background-color: rgba(59, 130, 246, 0.1);
-    color: #3b82f6;
-}
-
-.feature-icon-green {
-    background-color: rgba(45, 212, 191, 0.1);
-    color: #2dd4bf;
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .text-gradient {
-    background-image: linear-gradient(to right, #2dd4bf, #3b82f6, #8b5cf6);
-    /* teal-400, blue-500, violet-500 */
+    background-image: linear-gradient(to right, #2dd4bf, #3b82f6, #8b5cf6); /* teal-400, blue-500, violet-500 */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
-
 .lymora-gradient-text {
-    background-image: linear-gradient(to left, #2dd4bf, #3b82f6);
-    /* Green to Blue */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.coming-soon-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    color: #a7f3d0;
-    /* Green-200 */
-}
-
-.coming-soon-tag::before {
-    content: '';
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 9999px;
-    background-color: #34d399;
-    /* Green-400 */
+  background-image: linear-gradient(to right, #6EE7B7, #3B82F6);
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari compatibility */
+  color: transparent;
 }
