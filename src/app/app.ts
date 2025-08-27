@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Footer } from "./footer/footer";
-import { Landing } from "./landing/landing";
+import { Landing } from "./main-features/landing-page/landing/landing";
 import { Header } from "./header/header";
 
 @Component({
